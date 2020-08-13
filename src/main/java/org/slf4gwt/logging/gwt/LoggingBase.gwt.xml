@@ -1,0 +1,85 @@
+<module>
+  <inherits name="org.slf4gwt.logging.impl.LoggingImpl"/>
+  <inherits name="com.google.gwt.logging.Logging"/>
+
+  <source path=""/>
+
+  <replace-with class="org.slf4j.helpers.NOPLoggerFactory">
+    <when-type-is class="org.slf4j.ILoggerFactory"/>
+  </replace-with>
+
+  <replace-with class="org.slf4gwt.logging.gwt.GwtJulLoggerFactory">
+    <when-type-is class="org.slf4j.ILoggerFactory"/>
+    <none>
+      <when-property-is name="gwt.logging.enabled" value="FALSE"/>
+    </none>
+  </replace-with>
+
+  <define-property name="slf4gwt.log.level" values="TRACE, DEBUG, INFO, WARN, ERROR" />
+
+  <set-property name="gwt.logging.logLevel" value="FINEST">
+    <when-property-is name="slf4gwt.log.level" value="TRACE"/>
+  </set-property>
+
+  <set-property name="gwt.logging.logLevel" value="FINE">
+    <when-property-is name="slf4gwt.log.level" value="DEBUG"/>
+  </set-property>
+
+  <set-property name="gwt.logging.logLevel" value="INFO">
+    <when-property-is name="slf4gwt.log.level" value="INFO"/>
+  </set-property>
+
+  <set-property name="gwt.logging.logLevel" value="WARNING">
+    <when-property-is name="slf4gwt.log.level" value="WARN"/>
+  </set-property>
+
+  <set-property name="gwt.logging.logLevel" value="SEVERE">
+    <when-property-is name="slf4gwt.log.level" value="ERROR"/>
+  </set-property>
+
+  <define-property name="slf4gwt.log.handler.console" values="ENABLED, DISABLED"/>
+  <define-property name="slf4gwt.log.handler.developmentMode" values="ENABLED, DISABLED"/>
+  <define-property name="slf4gwt.log.handler.system" values="ENABLED, DISABLED"/>
+  <define-property name="slf4gwt.log.handler.simpleRemote" values="ENABLED, DISABLED"/>
+  <define-property name="slf4gwt.log.handler.hasWidgets" values="ENABLED, DISABLED"/>
+
+  <set-property name="gwt.logging.consoleHandler" value="ENABLED">
+    <when-property-is name="slf4gwt.log.handler.console" value="ENABLED"/>
+  </set-property>
+
+  <set-property name="gwt.logging.consoleHandler" value="DISABLED">
+    <when-property-is name="slf4gwt.log.handler.console" value="DISABLED"/>
+  </set-property>
+
+  <set-property name="gwt.logging.developmentModeHandler" value="ENABLED">
+    <when-property-is name="slf4gwt.log.handler.developmentMode" value="ENABLED"/>
+  </set-property>
+
+  <set-property name="gwt.logging.developmentModeHandler" value="DISABLED">
+    <when-property-is name="slf4gwt.log.handler.developmentMode" value="DISABLED"/>
+  </set-property>
+
+  <set-property name="gwt.logging.hasWidgetsHandler" value="ENABLED">
+    <when-property-is name="slf4gwt.log.handler.hasWidgets" value="ENABLED"/>
+  </set-property>
+
+  <set-property name="gwt.logging.hasWidgetsHandler" value="DISABLED">
+    <when-property-is name="slf4gwt.log.handler.hasWidgets" value="DISABLED"/>
+  </set-property>
+
+  <set-property name="gwt.logging.systemHandler" value="ENABLED">
+    <when-property-is name="slf4gwt.log.handler.system" value="ENABLED"/>
+  </set-property>
+
+  <set-property name="gwt.logging.systemHandler" value="DISABLED">
+    <when-property-is name="slf4gwt.log.handler.system" value="DISABLED"/>
+  </set-property>
+
+  <set-property name="gwt.logging.simpleRemoteHandler" value="ENABLED">
+    <when-property-is name="slf4gwt.log.handler.simpleRemote" value="ENABLED"/>
+  </set-property>
+
+  <set-property name="gwt.logging.simpleRemoteHandler" value="DISABLED">
+    <when-property-is name="slf4gwt.log.handler.simpleRemote" value="DISABLED"/>
+  </set-property>
+</module>

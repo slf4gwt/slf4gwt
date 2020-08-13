@@ -1,0 +1,11 @@
+<module>
+  <inherits name="org.slf4gwt.logging.gwt.LoggingBase"/>
+
+  <set-property name="slf4gwt.log.handler.console" value="ENABLED" />
+  <set-property name="slf4gwt.log.handler.developmentMode" value="ENABLED" />
+  <set-property name="slf4gwt.log.handler.hasWidgets" value="DISABLED" />
+  <set-property name="slf4gwt.log.handler.system" value="DISABLED" />
+  <set-property name="slf4gwt.log.handler.simpleRemote" value="DISABLED" />
+
+  <set-property name="slf4gwt.log.level" value="INFO"/>
+</module>

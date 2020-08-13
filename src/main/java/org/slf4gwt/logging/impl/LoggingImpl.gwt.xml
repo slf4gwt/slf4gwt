@@ -1,0 +1,5 @@
+<module>
+  <inherits name="org.slf4gwt.api.API"/>
+
+  <source path=""/>
+</module>
