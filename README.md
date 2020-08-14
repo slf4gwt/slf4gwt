@@ -13,7 +13,7 @@ implementation, and we use this implementation to write the messages to the righ
 
 ## Inspiration
 slf4gwt is inspired by some other open source projects. The most important one is
-gwt-log the former number one logging framework for GWT. It was used before GWT 2.1 very often. Next we like slf4j-gwt a lot
+[gwt-log](https://github.com/fredsa/gwt-log) the former number one logging framework for GWT. It was used before GWT 2.1 very often. Next we like [slf4j-gwt](https://github.com/FinamTrade/slf4j-gwt) a lot
 but the implementation stopped some years ago, and slf4gwt likes to bridge the gap and provide a state of the art version,
 that can be used with the current GWT implementations.
 
@@ -44,3 +44,14 @@ And you can configure the used appenders:
 <set-property name="slf4gwt.log.handler.system" value="DISABLED" />
 <set-property name="slf4gwt.log.handler.simpleRemote" value="DISABLED" />
 ```
+
+### Logging in development and production mode:
+Normally the logging is enabled in development mode and disabled in production mode.
+If you need to get logs on production mode, you have to enable the GWT logging as defined on the
+[GWT logging manual](http://www.gwtproject.org/doc/latest/DevGuideLogging.html#Configuring_GWT_Logging). Or simply add this line to you *.gwt.xml file:
+
+```xml
+<set-property name="gwt.logging.enabled" value="TRUE"/>
+```
+
+Possible values are <code>TRUE</code>, <code>WARNING</code>, <code>SEVERE</code> and FALSE (if you don't need any logging at all).
