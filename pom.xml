@@ -5,7 +5,7 @@
   <name>slf4gwt</name>
   <groupId>org.slf4gwt</groupId>
   <artifactId>slf4gwt</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
   <packaging>jar</packaging>
   <description>SLF4J emulation for GWT</description>
   <url>https://github.com/slf4gwt/slf4gwt</url>
@@ -40,7 +40,7 @@
   <scm>
     <connection>scm:git:ssh://github.com/slf4gwt/slf4gwt.git</connection>
     <url>https://github.com/slf4gwt/slf4gwt</url>
-    <tag>v1.0</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <developers>
