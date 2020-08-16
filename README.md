@@ -23,6 +23,14 @@ that can be used with the current GWT implementations.
 
 First you need to import the jar into your project.
 
+```xml
+<dependency>
+    <groupId>org.slf4gwt</groupId>
+    <artifactId>slf4gwt</artifactId>
+    <version>1.0-SNAPSHOT</version>
+</dependency>
+```
+
 Then add the logging module to your module (*.gwt.xml):
 
 ```xml
@@ -54,4 +62,4 @@ If you need to get logs on production mode, you have to enable the GWT logging a
 <set-property name="gwt.logging.enabled" value="TRUE"/>
 ```
 
-Possible values are <code>TRUE</code>, <code>WARNING</code>, <code>SEVERE</code> and FALSE (if you don't need any logging at all).
+Possible values are <code>TRUE</code>, <code>WARNING</code>, <code>SEVERE</code> and <code>FALSE</code> (if you don't need any logging at all).
