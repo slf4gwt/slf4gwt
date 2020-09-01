@@ -1,0 +1,6 @@
+<module>
+  <inherits name="org.slf4gwt.logging.gwt.Logging"/>
+
+  <source path="client"/>
+
+</module>
