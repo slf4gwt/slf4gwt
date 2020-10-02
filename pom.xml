@@ -114,6 +114,7 @@
             <exclude>target/**</exclude>
             <exclude>LICENSE**</exclude>
             <exclude>build/**</exclude>
+	    <exclude>.github/**</exclude>
           </excludes>
         </configuration>
         <executions>
