@@ -4,7 +4,7 @@
 
   <groupId>org.slf4gwt</groupId>
   <artifactId>slf4gwt-parent</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
   <name>${project.artifactId}</name>
   <packaging>pom</packaging>
   <description>SLF4J emulation for GWT</description>
@@ -45,7 +45,7 @@
   <scm>
     <connection>scm:git:ssh://github.com/slf4gwt/slf4gwt.git</connection>
     <url>https://github.com/slf4gwt/slf4gwt</url>
-    <tag>HEAD</tag>
+    <tag>1.2</tag>
   </scm>
 
   <developers>
