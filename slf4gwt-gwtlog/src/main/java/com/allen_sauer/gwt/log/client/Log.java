@@ -140,7 +140,7 @@ public final class Log {
    * @param e the exception to be logged
    */
   public static void debug(String category, String message, Throwable e) {
-    debug(category, message, e);
+    getLogger(category).debug(message, e);
   }
 
   /**
