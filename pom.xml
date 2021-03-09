@@ -4,7 +4,7 @@
 
   <groupId>org.slf4gwt</groupId>
   <artifactId>slf4gwt-parent</artifactId>
-  <version>1.4-SNAPSHOT</version>
+  <version>1.5-SNAPSHOT</version>
   <name>${project.artifactId}</name>
   <packaging>pom</packaging>
   <description>SLF4J emulation for GWT</description>
