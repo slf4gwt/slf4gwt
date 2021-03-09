@@ -21,6 +21,7 @@
   <modules>
     <module>slf4gwt</module>
     <module>slf4gwt-gwtlog</module>
+    <module>slf4gwt-remote</module>
   </modules>
 
   <licenses>

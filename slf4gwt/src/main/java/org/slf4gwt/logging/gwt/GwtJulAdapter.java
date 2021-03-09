@@ -100,11 +100,11 @@ public class GwtJulAdapter extends MarkerIgnoringBase {
   }
 
   public void info(String format, Object arg1, Object arg2) {
-    logObjects(Level.FINEST, format, arg1, arg2);
+    logObjects(Level.INFO, format, arg1, arg2);
   }
 
   public void info(String format, Object... arguments) {
-    logObjects(Level.FINEST, format, arguments);
+    logObjects(Level.INFO, format, arguments);
   }
 
   public void info(String msg, Throwable t) {

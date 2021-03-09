@@ -1,0 +1,36 @@
+<module>
+  <inherits name="org.slf4gwt.logging.gwt.Logging"/>
+
+  <source path="client"/>
+  <source path="shared"/>
+
+  <define-property name="slf4gwt.log.remote.batch.minLogLevel" values="TRACE, DEBUG, INFO, WARN, ERROR" />
+
+  <set-property name="slf4gwt.log.remote.batch.minLogLevel" value="TRACE"/>
+
+  <replace-with class="org.slf4gwt.remote.batching.client.RemoteBatchLogHandler">
+    <when-type-is class="com.google.gwt.logging.client.SimpleRemoteLogHandler"/>
+    <when-property-is name="slf4gwt.log.remote.batch.minLogLevel" value="TRACE"/>
+  </replace-with>
+
+  <replace-with class="org.slf4gwt.remote.batching.client.RemoteBatchLogHandler.RemoteBatchLogHandlerDebug">
+    <when-type-is class="com.google.gwt.logging.client.SimpleRemoteLogHandler"/>
+    <when-property-is name="slf4gwt.log.remote.batch.minLogLevel" value="DEBUG"/>
+  </replace-with>
+
+  <replace-with class="org.slf4gwt.remote.batching.client.RemoteBatchLogHandler.RemoteBatchLogHandlerInfo">
+    <when-type-is class="com.google.gwt.logging.client.SimpleRemoteLogHandler"/>
+    <when-property-is name="slf4gwt.log.remote.batch.minLogLevel" value="INFO"/>
+  </replace-with>
+
+  <replace-with class="org.slf4gwt.remote.batching.client.RemoteBatchLogHandler.RemoteBatchLogHandlerWarn">
+    <when-type-is class="com.google.gwt.logging.client.SimpleRemoteLogHandler"/>
+    <when-property-is name="slf4gwt.log.remote.batch.minLogLevel" value="WARN"/>
+  </replace-with>
+
+  <replace-with class="org.slf4gwt.remote.batching.client.RemoteBatchLogHandler.RemoteBatchLogHandlerError">
+    <when-type-is class="com.google.gwt.logging.client.SimpleRemoteLogHandler"/>
+    <when-property-is name="slf4gwt.log.remote.batch.minLogLevel" value="ERROR"/>
+  </replace-with>
+
+</module>
