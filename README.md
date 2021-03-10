@@ -19,15 +19,13 @@ that can be used with the current GWT implementations.
 
 ## Usage
 
-*IMPORTANT*: slf4gwt is in beta state for now, things may change 😎  
-
 First you need to import the jar into your project.
 
 ```xml
 <dependency>
     <groupId>org.slf4gwt</groupId>
     <artifactId>slf4gwt</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.4</version>
 </dependency>
 ```
 
