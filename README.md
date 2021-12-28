@@ -32,7 +32,7 @@ First you need to import the jar into your project.
 Then add the logging module to your module (*.gwt.xml):
 
 ```xml
-<inherits name="org.slf4jgwt.logging.gwt.Logging"/>
+<inherits name="org.slf4gwt.logging.gwt.Logging"/>
 ```
 
 You can also set logging level (TRACE, DEBUG, INFO, WARN, ERROR):
