@@ -3,7 +3,6 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>slf4gwt-gwtlog</artifactId>
-  <version>1.5-SNAPSHOT</version>
   <name>${project.artifactId}</name>
   <packaging>jar</packaging>
 
