@@ -28,20 +28,20 @@ import org.slf4gwt.logging.impl.Impl;
 
 /**
  * The <code>LoggerFactory</code> is a utility class producing Loggers for
- * various logging APIs, most notably for log4j, logback and JDK 1.4 logging.
- * Other implementations such as {@link org.slf4j.impl.NOPLogger NOPLogger} and
- * {@link org.slf4j.impl.SimpleLogger SimpleLogger} are also supported.
- * <p/>
- * <p/>
- * <code>LoggerFactory</code> is essentially a wrapper around an
- * {@link ILoggerFactory} instance bound with <code>LoggerFactory</code> at
- * compile time.
- * <p/>
- * <p/>
+ * various logging APIs, e.g. logback, reload4j, log4j and JDK 1.4 logging.
+ * Other implementations such as {@link org.slf4j.helpers.NOPLogger NOPLogger} and
+ * SimpleLogger are also supported.
+ *
+ * <p><code>LoggerFactory</code>  is essentially a wrapper around an
+ * {@link ILoggerFactory} instance provided by a {@link SLF4JServiceProvider}.
+ *
+ * <p>
  * Please note that all methods in <code>LoggerFactory</code> are static.
  *
- * @author Ceki G&uuml;lc&uuml;
+ * @author Alexander Dorokhine
  * @author Robert Elliot
+ * @author Ceki G&uuml;lc&uuml;
+ *
  */
 public class LoggerFactory {
   private LoggerFactory() {

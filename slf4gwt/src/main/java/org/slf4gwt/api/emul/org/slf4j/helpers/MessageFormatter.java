@@ -83,7 +83,7 @@ import java.util.Map;
  * will return the string "File name is C:\file.zip".
  *
  * <p>
- * The formatting conventions are different than those of {@link MessageFormat}
+ * The formatting conventions are different from those of {@link MessageFormat}
  * which ships with the Java platform. This is justified by the fact that
  * SLF4J's implementation is 10 times faster than that of {@link MessageFormat}.
  * This local performance difference is both measurable and significant in the
@@ -153,7 +153,6 @@ final public class MessageFormatter {
     return arrayFormat(messagePattern, new Object[] { arg1, arg2 });
   }
 
-
   final public static FormattingTuple arrayFormat(final String messagePattern, final Object[] argArray) {
     Throwable throwableCandidate = MessageFormatter.getThrowableCandidate(argArray);
     Object[] args = argArray;
@@ -161,6 +160,21 @@ final public class MessageFormatter {
       args = MessageFormatter.trimmedCopy(argArray);
     }
     return arrayFormat(messagePattern, args, throwableCandidate);
+  }
+
+  /**
+   * Assumes that argArray only contains arguments with no throwable as last element.
+   * 
+   * @param messagePattern
+   * @param argArray
+   */
+  final public static String basicArrayFormat(final String messagePattern, final Object[] argArray) {
+    FormattingTuple ft = arrayFormat(messagePattern, argArray, null);
+    return ft.getMessage();
+  }
+
+  public static String basicArrayFormat(NormalizedParameters np) {
+    return basicArrayFormat(np.getMessage(), np.getArguments());
   }
 
   final public static FormattingTuple arrayFormat(final String messagePattern, final Object[] argArray, Throwable throwable) {
@@ -204,13 +218,13 @@ final public class MessageFormatter {
             // itself escaped: "abc x:\\{}"
             // we have to consume one backward slash
             sbuf.append(messagePattern, i, j - 1);
-            deeplyAppendParameter(sbuf, argArray[L], new HashMap<Object[], Object>());
+            deeplyAppendParameter(sbuf, argArray[L], new HashMap<>());
             i = j + 2;
           }
         } else {
           // normal case
           sbuf.append(messagePattern, i, j);
-          deeplyAppendParameter(sbuf, argArray[L], new HashMap<Object[], Object>());
+          deeplyAppendParameter(sbuf, argArray[L], new HashMap<>());
           i = j + 2;
         }
       }
@@ -402,16 +416,7 @@ final public class MessageFormatter {
    *          otherwise it returns null
    */
   public static Throwable getThrowableCandidate(final Object[] argArray) {
-    if (argArray == null || argArray.length == 0) {
-      return null;
-    }
-
-    final Object lastEntry = argArray[argArray.length - 1];
-    if (lastEntry instanceof Throwable) {
-      return (Throwable) lastEntry;
-    }
-
-    return null;
+    return NormalizedParameters.getThrowableCandidate(argArray);
   }
 
   /**
@@ -423,19 +428,7 @@ final public class MessageFormatter {
    * @return a copy of the array without the last element
    */
   public static Object[] trimmedCopy(final Object[] argArray) {
-    if (argArray == null || argArray.length == 0) {
-      throw new IllegalStateException("non-sensical empty or null argument array");
-    }
-
-    final int trimmedLen = argArray.length - 1;
-
-    Object[] trimmed = new Object[trimmedLen];
-
-    if (trimmedLen > 0) {
-      System.arraycopy(argArray, 0, trimmed, 0, trimmedLen);
-    }
-
-    return trimmed;
+    return NormalizedParameters.trimmedCopy(argArray);
   }
 
 }
