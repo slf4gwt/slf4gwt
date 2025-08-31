@@ -149,6 +149,7 @@
           <source>8</source>
           <linksource>true</linksource>
           <doclint>none</doclint>
+          <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
           <links>
             <link>https://docs.oracle.com/javase/8/docs/api/</link>
           </links>
